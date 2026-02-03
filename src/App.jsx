@@ -1,5 +1,11 @@
+import PageRouters from "./myRouters/PageRouters";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <PageRouters />
+    </>
+  );
 }
 
 export default App;
