@@ -13,10 +13,7 @@ function Lang({ toggle, swichLang }) {
 
   return (
     <>
-      <div
-        onClick={() => setArrowUp(!arrowUp)}
-        className="relative text-[#000000]"
-      >
+      <div className="relative text-[#000000]">
         <div
           className="flex gap-[9px] items-center cursor-pointer"
           onClick={toggle}
@@ -28,11 +25,6 @@ function Lang({ toggle, swichLang }) {
           >
             {curretLang}
           </button>
-          <img
-            className={`.lang-arrow-up ${arrowUp ? "lang-arrow-down" : ""}`}
-            src={langArrow}
-            alt="arrow"
-          />
         </div>
         {swichLang}
       </div>

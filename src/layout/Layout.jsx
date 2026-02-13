@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import Header from "./Header";
-import Footer from "./Footer"
+import Footer from "./Footer";
 function Layout({ children }) {
   return (
     <>
