@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import DOMPurify from "dompurify";
 function HomePageAbout({
   title,
-  titleButtonText,
   text,
+  titleButtonText,
   cardimg1,
   cardimg2,
   cardimg3,
@@ -15,7 +15,7 @@ function HomePageAbout({
 }) {
   return (
     <>
-      <div>
+      <div className="mb-[8rem]">
         <div className="flex justify-between items-center mb-[4rem]">
           <h3 className="text-[4rem] text-[#BAD0AC] font-[800]">{title}</h3>
 
@@ -36,26 +36,64 @@ function HomePageAbout({
         </div>
 
         <div>
-          <div className="grid grid-cols-12">
-            <div className="col-span-3">
-              <img src={cardimg1} alt="card-img" />
+          <div className="grid grid-cols-12 items-center gap-[4rem]">
+            <div className="col-span-3 gap-[4rem] flex flex-col items-center border-[1px] border-solid border-[#BAD0AC] rounded-[2rem]">
+              <div>
+                <img
+                  className="max-w-[6rem] bg-[#BAD0AC] p-[1rem] rounded-[3rem]"
+                  src={cardimg1}
+                  alt="card-img"
+                />
+              </div>
 
-              <p>{cardtext1}</p>
+              <div
+                className="text-center text-[1.4rem] text-[#1B1B1B] font-[500] "
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(cardtext1),
+                }}
+              />
             </div>
-            <div className="col-span-3">
-              <img src={cardimg2} alt="card-img" />
+            <div className="col-span-3 gap-[4rem] flex flex-col items-center border-[1px] border-solid border-[#BAD0AC] rounded-[2rem]">
+              <img
+                className="max-w-[6rem] bg-[#BAD0AC] p-[1rem] rounded-[3rem]"
+                src={cardimg2}
+                alt="card-img"
+              />
 
-              <p>{cardtext2}</p>
+              <div
+                className="text-center text-[1.4rem] text-[#1B1B1B] font-[500]"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(cardtext2),
+                }}
+              />
             </div>
-            <div className="col-span-3">
-              <img src={cardimg3} alt="card-img" />
+            <div className="col-span-3 gap-[4rem] flex flex-col items-center border-[1px] border-solid border-[#BAD0AC] rounded-[2rem]">
+              <img
+                className="max-w-[6rem] bg-[#BAD0AC] p-[1rem] rounded-[3rem]"
+                src={cardimg3}
+                alt="card-img"
+              />
 
-              <p>{cardtext3}</p>
+              <div
+                className="text-center text-[1.4rem] text-[#1B1B1B] font-[500]"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(cardtext3),
+                }}
+              />
             </div>
-            <div className="col-span-3">
-              <img src={cardimg4} alt="card-img" />
+            <div className="col-span-3 gap-[4rem] flex flex-col items-center border-[1px] border-solid border-[#BAD0AC] rounded-[2rem]">
+              <img
+                className="max-w-[6rem] bg-[#BAD0AC] p-[1rem] rounded-[3rem]"
+                src={cardimg4}
+                alt="card-img"
+              />
 
-              <p>{cardtext4}</p>
+              <div
+                className="text-center text-[1.4rem] text-[#1B1B1B] font-[500]"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(cardtext4),
+                }}
+              />
             </div>
           </div>
         </div>

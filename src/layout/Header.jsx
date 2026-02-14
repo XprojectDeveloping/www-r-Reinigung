@@ -1,10 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import MaxWidth from "../components/MaxWidth/MaxWidth";
-import UseGobalFetch from "../components/useGlobalFetch/useGlobalFetch";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import Lang from "../components/Language/Lang";
-import headerLogo from "../../public/img/header/headerLogo/headerLogo.svg";
 import headerSearchIco from "../../public/img/header/headerSearchIco/searchIco.svg";
 import useGlobalFetch from "../components/useGlobalFetch/useGlobalFetch";
 function Header() {
@@ -124,9 +122,13 @@ function Header() {
           <MaxWidth>
             <div className="flex justify-between items-center pb-[4rem] border-b-[1px] border-[#BAD0AC]">
               {/* header bottom logo */}
-              <div>
-                <img className="max-w-[32rem]" src={headerLogo} alt="logo" />
-              </div>
+              <Link to={"/"}>
+                <img
+                  className="max-w-[32rem]"
+                  src={`${import.meta.env.VITE_PICTURE}/${data?.settings?.logob}`}
+                  alt="logo"
+                />
+              </Link>
               {/* header bottom links */}
               <div className="flex items-center gap-[4rem]">
                 {data?.header_services &&

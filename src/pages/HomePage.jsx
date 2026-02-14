@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import MaxWidth from "../components/MaxWidth/MaxWidth";
 import HomePageAbout from "../components/Sections/HomePage/HomePageAbout";
 import useGlobalFetch from "../components/useGlobalFetch/useGlobalFetch";
+import HomePageSlider from "../components/Sections/HomePage/HomePageSlider";
 
 function HomePage(params) {
   const { data } = useGlobalFetch();
@@ -9,6 +10,13 @@ function HomePage(params) {
   return (
     <>
       <main>
+        <section>
+          {data.slayder && (
+            <MaxWidth>
+              <HomePageSlider dataSlider={data.slayder} />
+            </MaxWidth>
+          )}
+        </section>
         <section>
           {data.abouthome && (
             <MaxWidth>
@@ -31,7 +39,34 @@ function HomePage(params) {
                       item?.locale === localStorage?.getItem("i18nextLng"),
                   )?.btn_name
                 }
-                // cardimg1={`${import.meta.env.VITE_PICTURE}/${data?.abouthome?.image1}`}
+                cardimg1={`${import.meta.env.VITE_PICTURE}/${data?.abouthome?.image1}`}
+                cardimg2={`${import.meta.env.VITE_PICTURE}/${data?.abouthome?.image2}`}
+                cardimg3={`${import.meta.env.VITE_PICTURE}/${data?.abouthome?.image3}`}
+                cardimg4={`${import.meta.env.VITE_PICTURE}/${data?.abouthome?.image4}`}
+                cardtext1={
+                  data.abouthome?.translations.find(
+                    (item) =>
+                      item?.locale === localStorage.getItem("i18nextLng"),
+                  )?.text1
+                }
+                cardtext2={
+                  data.abouthome?.translations.find(
+                    (item) =>
+                      item?.locale === localStorage.getItem("i18nextLng"),
+                  )?.text2
+                }
+                cardtext3={
+                  data.abouthome?.translations.find(
+                    (item) =>
+                      item?.locale === localStorage.getItem("i18nextLng"),
+                  )?.text3
+                }
+                cardtext4={
+                  data.abouthome?.translations.find(
+                    (item) =>
+                      item?.locale === localStorage.getItem("i18nextLng"),
+                  )?.text4
+                }
               />
             </MaxWidth>
           )}
