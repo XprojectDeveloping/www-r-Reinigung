@@ -3,6 +3,9 @@ import MaxWidth from "../components/MaxWidth/MaxWidth";
 import HomePageAbout from "../components/Sections/HomePage/HomePageAbout";
 import useGlobalFetch from "../components/useGlobalFetch/useGlobalFetch";
 import HomePageSlider from "../components/Sections/HomePage/HomePageSlider";
+import HomePageServices from "../components/Sections/HomePage/HomePageServicesHeader";
+import HomePageServicesHeader from "../components/Sections/HomePage/HomePageServicesHeader";
+import HomePageServicesCard from "../components/Sections/HomePage/HomePageServicesCards";
 
 function HomePage(params) {
   const { data } = useGlobalFetch();
@@ -68,6 +71,38 @@ function HomePage(params) {
                   )?.text4
                 }
               />
+            </MaxWidth>
+          )}
+        </section>
+        <section>
+          {data?.servicesheader && (
+            <MaxWidth>
+              <HomePageServicesHeader
+                title={
+                  data?.servicesheader?.translations?.find(
+                    (item) =>
+                      item?.locale === localStorage?.getItem("i18nextLng"),
+                  )?.text1
+                }
+                titleButtonText={
+                  data?.servicesheader?.translations?.find(
+                    (item) =>
+                      item?.locale === localStorage?.getItem("i18nextLng"),
+                  )?.text1
+                }
+                text={
+                  data?.servicesheader?.translations?.find(
+                    (item) =>
+                      item?.locale === localStorage?.getItem("i18nextLng"),
+                  )?.text6
+                }
+              />
+            </MaxWidth>
+          )}
+
+          {data?.services && (
+            <MaxWidth>
+              <HomePageServicesCard dataCard={data?.services} />
             </MaxWidth>
           )}
         </section>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import DOMPurify from "dompurify";
+import { useTranslation } from "react-i18next";
 function HomePageAbout({
   title,
   text,
@@ -13,6 +14,7 @@ function HomePageAbout({
   cardtext3,
   cardtext4,
 }) {
+  const [t] = useTranslation("translation");
   return (
     <>
       <div className="mb-[8rem]">
