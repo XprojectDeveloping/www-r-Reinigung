@@ -3,9 +3,9 @@ import MaxWidth from "../components/MaxWidth/MaxWidth";
 import HomePageAbout from "../components/Sections/HomePage/HomePageAbout";
 import useGlobalFetch from "../components/useGlobalFetch/useGlobalFetch";
 import HomePageSlider from "../components/Sections/HomePage/HomePageSlider";
-import HomePageServices from "../components/Sections/HomePage/HomePageServicesHeader";
 import HomePageServicesHeader from "../components/Sections/HomePage/HomePageServicesHeader";
 import HomePageServicesCard from "../components/Sections/HomePage/HomePageServicesCards";
+import HomePageServices from "../components/Sections/HomePage/HomePageSevices";
 
 function HomePage(params) {
   const { data } = useGlobalFetch();
@@ -103,6 +103,41 @@ function HomePage(params) {
           {data?.services && (
             <MaxWidth>
               <HomePageServicesCard dataCard={data?.services} />
+            </MaxWidth>
+          )}
+        </section>
+
+        <section>
+          {data?.proces && (
+            <MaxWidth>
+              <HomePageServices
+                title={
+                  data?.proces?.translations?.find(
+                    (item) =>
+                      item?.locale === localStorage?.getItem("i18nextLng"),
+                  )?.title
+                }
+                titleButtonText={
+                  data?.proces?.translations?.find(
+                    (item) =>
+                      item?.locale === localStorage?.getItem("i18nextLng"),
+                  )?.button_name
+                }
+                text={
+                  data?.proces.translations?.find(
+                    (item) =>
+                      item?.locale === localStorage?.getItem("i18nextLng"),
+                  )?.text
+                }
+                text2={
+                  data?.proces?.translations?.find(
+                    (item) =>
+                      item?.locale === localStorage?.getItem("i18nextLng"),
+                  )?.name2
+                }
+                img1={`${import.meta.env.VITE_PICTURE}/${data?.proces?.image1}`}
+                img2={`${import.meta.env.VITE_PICTURE}/${data?.proces?.image2}`}
+              />
             </MaxWidth>
           )}
         </section>

@@ -5,7 +5,7 @@ function HomePageServicesCard({ dataCard }) {
   const [t] = useTranslation("translation");
   return (
     <>
-      <div>
+      <div className="mb-[8rem]">
         <div className="grid grid-cols-12 gap-[4rem]">
           {dataCard &&
             dataCard.slice(0, 6).map((item) => {
