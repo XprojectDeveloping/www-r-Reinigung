@@ -17,7 +17,6 @@ function HomePageServices({
       <div className="mb-[8rem]">
         <div className="flex justify-between items-center">
           <h3 className="text-[4rem] text-[#BAD0AC] font-[800]">{title}</h3>
-
           <button className="group border-[1px] py-[1.4rem] px-[6rem] rounded-[10px] hover:bg-[#2F6F62] transition">
             <Link className="text-[1.4rem] text-[#BAD0AC] font-[600] group-hover:text-[#ffffff]">
               {titleButtonText}

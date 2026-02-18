@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import DOMPurify from "dompurify";
-import { useTranslation } from "react-i18next";
 function HomePageAbout({
   title,
   text,
@@ -14,13 +13,11 @@ function HomePageAbout({
   cardtext3,
   cardtext4,
 }) {
-  const [t] = useTranslation("translation");
   return (
     <>
       <div className="mb-[8rem]">
         <div className="flex justify-between items-center mb-[4rem]">
           <h3 className="text-[4rem] text-[#BAD0AC] font-[800]">{title}</h3>
-
           <button className="group border-[1px] py-[1.4rem] px-[6rem] rounded-[10px] hover:bg-[#2F6F62] transition">
             <Link
               className="text-[1.4rem] text-[#BAD0AC] font-[600] group-hover:text-[#ffffff]"
@@ -36,7 +33,6 @@ function HomePageAbout({
             dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(text) }}
           />
         </div>
-
         <div>
           <div className="grid grid-cols-12 items-stretch gap-[4rem] mt-[3rem]">
             {[
@@ -56,8 +52,6 @@ function HomePageAbout({
                     alt="card-img"
                   />
                 </div>
-
-                {/* Текст карточки */}
                 <div
                   className="text-center text-[1.8rem] text-[#1B1B1B] font-[500] leading-snug"
                   dangerouslySetInnerHTML={{
