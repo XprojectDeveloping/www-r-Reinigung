@@ -3,7 +3,7 @@ import MaxWidth from "../components/MaxWidth/MaxWidth";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import Lang from "../components/Language/Lang";
-import headerSearchIco from "../../public/img/header/headerSearchIco/searchIco.svg";
+import headerSearchIco from "/accets/img/header/headerSearchIco/searchIco.svg";
 import useGlobalFetch from "../components/useGlobalFetch/useGlobalFetch";
 function Header() {
   const { data } = useGlobalFetch();
